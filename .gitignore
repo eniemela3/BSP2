@@ -1,0 +1,5 @@
+*.mat
+*.txt
+*.asv
+
+/1_Artifact_removal_from_EEG/FastICA_25/*
