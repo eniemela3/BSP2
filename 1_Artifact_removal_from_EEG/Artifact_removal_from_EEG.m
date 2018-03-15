@@ -78,7 +78,7 @@ plot(EEG_data.t, ics' * scale + EEG_data.spread);
 xlabel('t (s)');
 title('Independent components');
 
-ics(4:6, :) = 0;
+ics(1:6, :) = 0;
 signals = A * ics;
 
 figure('Name', 'Artifacts removed');
