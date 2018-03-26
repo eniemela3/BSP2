@@ -1,6 +1,7 @@
 *.mat
 *.txt
 *.asv
+*.locs
 
 /1_Artifact_removal_from_EEG/FastICA_25/*
 /eeglab_current/*
