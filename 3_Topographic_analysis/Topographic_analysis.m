@@ -42,18 +42,19 @@ legend('Front', 'Rear');
 
 delta_range = find(F==1):find(F==4);
 alpha_range = find(F==8):find(F==12);
+figure;
 
 for i = 1:size(times, 2)   
     for j = 1:size(spectrograms, 2)
-        d_powers(j) = sum(spectrograms(j).P(delta_range, times(i)));
-        a_powers(j) = sum(spectrograms(j).P(alpha_range, times(i)));
+        d_powers(j) = sum(spectrograms(j).P(delta_range, times(i))) / sum(spectrograms(j).P(:, times(i)));
+        a_powers(j) = sum(spectrograms(j).P(alpha_range, times(i))) / sum(spectrograms(j).P(:, times(i)));
     end
     
     subplot(size(times, 2), 2, i*2-1);
-    topoplot(d_powers, '521282S_channel_locations.locs', 'maplimits', 'minmax'); % [0 1] scaling does not work
+    topoplot(d_powers, '521282S_channel_locations.locs', 'maplimits', [0 1]);
     title(sprintf('Delta power at {%1.f} s', (times(i))));
     
     subplot(size(times, 2), 2, i*2);
-    topoplot(a_powers, '521282S_channel_locations.locs', 'maplimits', 'minmax'); % [0 1] scaling does not work
+    topoplot(a_powers, '521282S_channel_locations.locs', 'maplimits', [0 1]); % [0 1] scaling does not work
     title(sprintf('Alpha power at {%1.f} s', (times(i))));
 end
