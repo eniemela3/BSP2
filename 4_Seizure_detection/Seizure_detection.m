@@ -78,8 +78,9 @@ interictal2 = [142 * Fs length(t2) - delta];
 figure('Name', '2D space');
 plot([-1500 1500],[-1500 1500], '.');
 hold;
-plot(signal(interictal1(1):interictal1(2)), signal((interictal1(1) + delta):(interictal1(2) + delta)), 'red.');
-plot(signal(interictal2(1):interictal2(2)), signal((interictal2(1) + delta):(interictal2(2) + delta)), 'red.')
-plot(signal(preictal(1):preictal(2)), signal((preictal(1) + delta):(preictal(2) + delta)), 'black.');
-plot(signal(postictal(1):postictal(2)), signal(postictal(1) + delta:(postictal(2) + delta)), 'black.');
-plot(signal(ictal(1):ictal(2)), signal(ictal(1) + delta:ictal(2) + delta), 'cyan.');
+plot(raw(ictal(1):ictal(2)), raw(ictal(1) + delta:ictal(2) + delta), 'cyan.');
+plot(raw(preictal(1):preictal(2)), raw((preictal(1) + delta):(preictal(2) + delta)), 'black.');
+plot(raw(postictal(1):postictal(2)), raw(postictal(1) + delta:(postictal(2) + delta)), 'black.');
+plot(raw(interictal1(1):interictal1(2)), raw((interictal1(1) + delta):(interictal1(2) + delta)), 'red.');
+plot(raw(interictal2(1):interictal2(2)), raw((interictal2(1) + delta):(interictal2(2) + delta)), 'red.')
+
