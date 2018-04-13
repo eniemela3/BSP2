@@ -18,7 +18,7 @@ title('Raw data and average');
 
 variances = var(data_to_plot, 1, 1);
 variance = mean(variances);
-energy = mean(mean(data_to_plot .^ 2));
+energy = mean(mean(data_to_plot).^ 2);
 SNR = 10 * log10(energy / variance);
 SNR_improvement = 20 * log10(sqrt(size(data_to_plot, 1)));
 new_SNR = SNR + SNR_improvement;
